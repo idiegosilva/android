@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en"> 
+	<head> 
+		<title>Turismo Iguape</title>
+		<link rel="shortcut icon" href="img/favicon.ico"/>
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<script type="text/javascript" src="js/jquery-1.11.2.js"></script>	
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css" >
+		<style>
+			.red	{border: 1px solid red;}
+			.blue	{border: 1px solid blue;}
+			.green	{border: 1px solid green;}
+			.black	{border: 1px solid black;}
+		</style>
+		<script type="text/javascript"> 
+			$(document).ready(function(){
+				var tipo = "hotel";
+				$.ajax({  
+				url: "http://depturismoiguape.esy.es/busca.php", 
+				//url: "busca.php", 
+				dataType: 'html',
+				data: {tipo:tipo},
+				type: "POST", 
+				success: function(data){
+					var resHotel= (data);
+					$("#resHotel").html(resHotel).show();},
+				});
+			});	
+			$(document).ready(function(){
+				var tipo = "restaurante";
+				$.ajax({  
+				url: "http://depturismoiguape.esy.es/busca.php", 
+				//url: "busca.php", 
+				dataType: 'html',
+				data: {tipo:tipo},
+				type: "POST", 
+				success: function(data){
+					var resHotel= (data);
+					$("#resRestaurante").html(resHotel).show();},
+				});
+			});				
+		</script>
+	</head> 
+	<body>
+		<div class="container">
+			<header>
+				<img src="img/logo.jpg" class="img-responsive black" width="100%">
+			</header>
+			<div class="panel-group" id="accordion">
+				<div class="panel panel-default">
+					<button class="btn btn-large btn-block btn-success" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+						<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+						<b>HOTÉIS/POUSADAS</b>
+					</button>
+					
+					<div id="collapse1" class="panel-collapse collapse">
+						<div class="panel-body">
+							<div id="resHotel"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default">
+					<button class="btn btn-large btn-block btn-warning" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+						<span class="glyphicon glyphicon-cutlery" aria-hidden="true"> </span>
+						<b> RESTAURANTES</b>
+					</button>
+					<div id="collapse2" class="panel-collapse collapse">
+						<div class="panel-body">
+							<div id="resRestaurante"></div>
+						</div><!-- panel-body -->
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<button class="btn btn-large btn-block btn-danger" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+						<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+						<b>PONTOS TURÍSTICOS</b>
+					</button>
+					<div id="collapse3" class="panel-collapse collapse">
+						<div class="panel-body">
+							
+						</div><!-- panel-body -->
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<button class="btn btn-large btn-block btn-info" data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+						<span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+						<b>PROGRAMAÇÃO/EVENTOS</b>
+					</button>
+					<div id="collapse4" class="panel-collapse collapse">
+						<div class="panel-body">
+							<!--<img src="img/festa.jpg" class="img-responsive" alt="Responsive image">-->
+							<center>
+								<h1>
+									<span class="label label-primary">
+										Festa do Senhor Bom Jesus de Iguape - “Eu vim para servir” (Mc 10,45)
+									</span>
+								</h1>
+							
+							<div class="lead"><span class="lead label label-success">Programação de 28 de Julho a 06 de Agosto</span></div>
+							</center>
+							
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+							<a href="#28" aria-controls="28" role="tab" data-toggle="tab">28/07</a></li>
+    <li role="presentation"><a href="#29" aria-controls="29" role="tab" data-toggle="tab">29/07</a></li>
+    <li role="presentation"><a href="#30" aria-controls="30" role="tab" data-toggle="tab">30/07</a></li>
+    <li role="presentation"><a href="#31" aria-controls="31" role="tab" data-toggle="tab">31/07</a></li>
+    <li role="presentation"><a href="#01" aria-controls="01" role="tab" data-toggle="tab">01/08</a></li>
+    <li role="presentation"><a href="#02" aria-controls="02" role="tab" data-toggle="tab">02/08</a></li>
+    <li role="presentation"><a href="#03" aria-controls="03" role="tab" data-toggle="tab">03/08</a></li>
+    <li role="presentation"><a href="#04" aria-controls="04" role="tab" data-toggle="tab">04/08</a></li>
+    <li role="presentation"><a href="#05" aria-controls="05" role="tab" data-toggle="tab">05/08</a></li>
+    <li role="presentation"><a href="#06" aria-controls="06" role="tab" data-toggle="tab">06/08</a></li>
+    <li role="presentation"><a href="#info" aria-controls="info" role="tab" data-toggle="tab">Mais informações</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="28">
+		<h3><b>O Senhor Bom Jesus vem ao nosso encontro</b></h3>
+		<p class="lead">Pe. Reginaldo Donatoni (Região Episcopal Belém - Arquidiocese de São Paulo)</p>
+		<p class="lead text-primary">Missas: 7h, 10h e 17h<br><span class="lead text-danger">Novena: 19h</span></p>
+	</div>
+    <div role="tabpanel" class="tab-pane" id="29">
+		<h3><b>Semeando a alegria do Evangelho</b></h3>
+		<p class="lead">Con. Benedito Ramom P. Ferreira (Reitor do Santuário de Santa Rita de Cássia - MG)</p>
+		<p class="lead text-primary">Missas: 7h, 10h e 17h<br><span class="lead text-danger">Novena: 19h</span></p>
+	</div>
+    <div role="tabpanel" class="tab-pane" id="30">
+		<h3><b>Ele quer fazer por nós mensageiros da paz</b></h3>
+		<p class="lead">Pe. Alessandro Silva do Nascimento (Pároco da Paróquia São João Batista em Cananéia)</p>
+		<p class="lead text-primary">Missas: 7h, 10h e 17h<br><span class="lead text-danger">Novena: 19h</span></p>
+	</div>
+    <div role="tabpanel" class="tab-pane" id="31">
+		<h3><b>Discípulos missionários a serviço da vida e da esperança</b></h3>
+		<p class="lead">Pe. João Batista de Almeida (Reitor do Santuário Nacional de Aparecida)</p>
+		<p class="lead text-primary">Missas: 7h, 10h e 17h<br><span class="lead text-danger">Novena: 19h</span></p>
+	</div>
+    <div role="tabpanel" class="tab-pane" id="01">
+		<h3><b>Consagrados a serviço do Povo de Deus</b></h3>
+		<p class="lead">Ir. Maria Natividade Pereira (Irmãs Paulinas - Revista Família Cristã)</p>
+		<p class="lead text-success">Via Sacra até a Fonte do Senhor: 15h</p>
+		<p class="lead text-primary">Missas: 7h, 10h e 17h<br><span class="lead text-danger">Novena: 19h</span></p>
+	</div>
+    <div role="tabpanel" class="tab-pane" id="02">
+		<h3><b>Quando os jovens se encontram com o Senhor Bom Jesus</b></h3>
+		<p class="lead">Pe. roberto Luís da Silva (Pároco da Paróquia São João Batista em Sete Barras)</p>
+		<p class="lead text-primary">Missas: 6h30, 8h, 10h, 15h e 17h<br><span class="lead text-danger">Novena: 19h</span></p>
+	</div>
+    <div role="tabpanel" class="tab-pane" id="03">
+		<h3><b>O amor é nossa missão: a família plenamente viva</b></h3>
+		<p class="lead">Casal Nélson e Irani (São Paulo)</p>
+		<p class="lead text-primary">Missas: 6h30, 8h, 10h, 15h e 17h<br>
+		<span class="lead text-danger">Novena: 19h - Acolhida do Bispo Dom José Luiz Bertanha, padres e religiosas da Diocese de Registro</span></p>
+	</div>
+    <div role="tabpanel" class="tab-pane" id="04">
+		<h3><b>Levando a vida do Senhor Bom Jesus a todos</b></h3>
+		<p class="lead">Pe. Edson Castro SVD (Provincial do Verbo Divino em São Paulo)</p>
+		<p class="lead text-primary">Missas: 6h30, 8h, 10h, 13h, 15h e 17h<br><span class="lead text-danger">Novena: 19h</span></p>
+	</div>
+    <div role="tabpanel" class="tab-pane" id="05">
+		<h3><b>Consagrados com Nossa Senhora das Neves</b></h3>
+		<p class="lead">Dom Sérgio Colombo (Diocese de Bragança Paulista)</p>
+		<p class="lead text-primary">Missas: 5h, 6h30, 8h, 10h, 13h e 15h<br>
+		<span class="lead text-success">Procissão: 17h</span><br>
+		<span class="lead text-danger">Novena: 19h</span></p>
+	</div>
+    <div role="tabpanel" class="tab-pane" id="06">
+		<h3><b>Romeiros buscam vida junto ao Senhor Bom Jesus</b></h3>
+		<p class="lead">Dom Sérgio Colombo</p>
+		<p class="lead text-primary">Missas: 5h, 6h30, 8h, 10h, 13h e 15h<br>
+		<span class="lead text-success">Procissão: 17h</span><br>
+		<span class="lead text-danger">Encerramento: 20h30</span></p>
+	</div>
+	<div role="tabpanel" class="tab-pane" id="info">
+		Mais informações
+	</div>
+  </div>
+
+
+							
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel panel-default">
+					<button class="btn btn-large btn-block btn-primary" data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+						<b>outro</b>
+					</button>
+					<div id="collapse5" class="panel-collapse collapse">
+						<div class="panel-body">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+							minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+							commodo consequat.
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel panel-default">
+					<button class="btn btn-large btn-block btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+						<b>outro 2</b>
+					</button>
+					<div id="collapse6" class="panel-collapse collapse">
+						<div class="panel-body">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+							minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+							commodo consequat.
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			
+			<footer>
+				<center>
+					Prefeitura Municipal de Iguape - Departamento de Cultura<br>
+					Largo da Basílica, 450 - Centro - Iguape/SP<br>
+					Desenvolvido por <a href="http://facebook.com/papilonn">Diego Silva</a><br>
+					
+				</center>
+			</footer>
+		</div>
+	</body>
+</html>
